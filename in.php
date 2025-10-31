@@ -13,16 +13,20 @@ echo "Connected successfully :)";
 // data recevie ke liye
 $user = $_POST['username'];
 $pass = $_POST['password'];
+$phone= $_post['phone'};
+$email= $_post['email'];
+$address= $_post['address'];
 
 // data base ke liye
-$sql = "SELECT * FROM users WHERE username='$user' AND password='$pass'";
+sql = "insert into customers( username,email, pass_hash,address'phone)
+   values('$user','$email','$pass_hash','$address','$phone')";
 $result = mysqli_query($conn, $sql);
-
 
 if (mysqli_num_rows($result) > 0) {
     echo "Login successful!";
-} else {
-    echo "Invalid username or password!";
+} else 
+    echo "Invalid !";
 }
+
 
 ?>
